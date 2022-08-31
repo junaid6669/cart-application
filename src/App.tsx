@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useRoutes } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
 import { CssBaseline } from '@material-ui/core';
 import routes from './routes';
 
@@ -10,7 +9,6 @@ const App: FC = () => {
 	return (
 		<>
 			<CssBaseline />
-			<Toaster position='top-center' />
 			{content}
 		</>
 	);

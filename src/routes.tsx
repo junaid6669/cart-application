@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import { Suspense, lazy } from 'react';
-import type { PartialRouteObject } from 'react-router';
+import type { RouteObject } from 'react-router';
 import LoadingScreen from './components/LoadingScreen';
 import MainLayout from './components/MainLayout';
 
@@ -15,7 +15,7 @@ const Loadable = Component => props =>
 
 const Checkout = Loadable(lazy(() => import('./pages/Checkout')));
 
-const routes: PartialRouteObject[] = [
+const routes: RouteObject[] = [
 	{
 		path: '*',
 		element: <MainLayout />,
