@@ -1,20 +1,4 @@
-import createSvgIcon from '@material-ui/core/utils/createSvgIcon';
+import RemoveIcon from '@material-ui/icons/Remove';
 
-const Minus = createSvgIcon(
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M18 12H6"
-    />
-  </svg>,
-  'Minus'
-);
-
+const Minus = (props: any) => <RemoveIcon fontSize='small' {...props} />;
 export default Minus;

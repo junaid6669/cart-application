@@ -1,5 +1,4 @@
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'nprogress/nprogress.css';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';

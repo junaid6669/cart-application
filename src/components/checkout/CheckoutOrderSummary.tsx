@@ -32,7 +32,7 @@ interface Product {
 interface Colors {
 	colour: string;
 }
-interface CheckoutOrderSummaryProps {
+export interface CheckoutOrderSummaryProps {
 	onQuantityChange?: (productId: string, btnID: string) => void;
 	onFilterChange?: (event: ChangeEvent<{ value: string }>) => void;
 	products: Product[];
@@ -51,12 +51,14 @@ const CheckoutOrderSummary: FC<CheckoutOrderSummaryProps> = props => {
 		total,
 		...other
 	} = props;
+	console.log('colors', colors);
 
 	return (
 		<Card variant='outlined' sx={{ p: 3 }} {...other}>
 			<FormControl sx={{ m: 1, minWidth: 180 }} size='small'>
 				<InputLabel id='demo-simple-select-label'>Colour Filter</InputLabel>
 				<Select
+					data-testid='color-filter-select'
 					labelId='demo-simple-select-label'
 					id='demo-simple-select'
 					label='Colour Filter'
@@ -67,7 +69,7 @@ const CheckoutOrderSummary: FC<CheckoutOrderSummaryProps> = props => {
 						<em>None</em>
 					</MenuItem>
 					{colors.map(res => (
-						<MenuItem key={res.colour} value={res.colour}>
+						<MenuItem key={res.colour} value={res.colour} data-testid='color-filter'>
 							{res.colour}
 						</MenuItem>
 					))}
@@ -96,6 +98,7 @@ const CheckoutOrderSummary: FC<CheckoutOrderSummaryProps> = props => {
 							</Box>
 						</ListItemAvatar>
 						<ListItemText
+							data-testid='product-name'
 							primary={
 								<Typography
 									color='textPrimary'
